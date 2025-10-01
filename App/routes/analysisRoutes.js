@@ -1,7 +1,10 @@
 import express from "express";
-import { analyze } from "../controllers/analysisController.js";
+import { analyze, getHistory } from "../controllers/analysisController.js";
+import { protect } from "../Middlewares/authMiddleware.js";
 
 const router = express.Router();
-router.post("/analyze", analyze);
+
+router.post("/analyze", protect, analyze);
+router.get("/history", protect, getHistory);
 
 export default router;
