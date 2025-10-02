@@ -36,7 +36,7 @@ const frontendPath = path.join(
   __dirname,
   "client",
   "bioremediation-frontend",
-  "public"
+  "build"
 );
 app.use(express.static(frontendPath));
 
