@@ -1,3 +1,5 @@
+const BASE_URL = "https://biotrack.onrender.com/api";
+
 export const fetchAPI = async (
   url,
   method = "GET",
@@ -7,7 +9,7 @@ export const fetchAPI = async (
   const headers = { "Content-Type": "application/json" };
   if (token) headers["Authorization"] = `Bearer ${token}`;
 
-  const res = await fetch(`http://localhost:5000/api${url}`, {
+  const res = await fetch(`${BASE_URL}${url}`, {
     method,
     headers,
     body: body ? JSON.stringify(body) : null,
