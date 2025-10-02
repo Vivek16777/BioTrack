@@ -1,0 +1,125 @@
+.home-container {
+  font-family: 'Arial', sans-serif;
+  color: #111827;
+  padding: 0 20px;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 60px 0;
+  background: linear-gradient(135deg, #d0f0fd, #ffffff);
+  border-radius: 15px;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 250px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #16a34a;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.hero-content .btn-primary {
+  background-color: #16a34a;
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hero-content .btn-primary:hover {
+  background-color: #15803d;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+  min-width: 200px;
+}
+
+.hero-image img {
+  max-width: 250px;
+  animation: floatMicrobe 3s ease-in-out infinite;
+}
+
+@keyframes floatMicrobe {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+section {
+  margin: 60px 0;
+  text-align: center;
+}
+
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.feature-card {
+  background-color: #f0fdf4;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1 1 220px;
+  max-width: 250px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.advantages-list {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.advantages-list li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.cta-section button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #16a34a;
+  color: #fff;
+  cursor: pointer;
+}
+
+.cta-section button:hover {
+  background-color: #15803d;
+}
+
+/* Mobile responsiveness */
+@media(max-width: 768px) {
+  .hero-section {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}

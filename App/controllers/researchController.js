@@ -31,3 +31,11 @@ export const reviewResearch = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+export const getAllResearch = async (req, res) => {
+  try {
+    const requests = await ResearchInput.find().sort({ createdAt: -1 });
+    res.json(requests);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};

@@ -1,0 +1,387 @@
+/* ================= Profile Page ================= */
+.profile-page {
+  min-height: calc(100vh - 50px);
+  position: relative;
+  background: linear-gradient(135deg, #0a1a2b 0%, #1a0b2e 50%, #000000 100%);
+  padding: 40px 20px;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ================= Background Particles ================= */
+.profile-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.profile-particle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: rgba(59, 191, 187, 0.5);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: floatParticle 12s infinite ease-in-out;
+  z-index: 0;
+}
+
+/* Particle animation */
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(20px, -30px) scale(1.4);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-15px, -60px) scale(1.2);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translate(30px, -40px) scale(1.3);
+    opacity: 0.7;
+  }
+}
+
+/* ================= Profile Container ================= */
+.profile-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================= Profile Header Card ================= */
+.profile-header-card {
+  position: relative;
+  z-index: 3;
+  background: rgba(10, 26, 43, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 191, 187, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  margin-bottom: 30px;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-cover {
+  height: 150px;
+  position: relative;
+  background: linear-gradient(135deg, #0a1a2b 0%, #1a0b2e 100%);
+  overflow: hidden;
+}
+
+.profile-cover-gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #3bbfbb 0%, #2a9df4 50%, #6bc4e5 100%);
+  opacity: 0.3;
+  animation: coverShimmer 8s ease-in-out infinite;
+}
+
+@keyframes coverShimmer {
+  0%, 100% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+/* ================= Avatar Section ================= */
+.profile-avatar-section {
+  padding: 70px 40px 30px;
+  display: flex;
+  align-items: flex-end;
+  gap: 25px;
+  margin-top: -60px;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3bbfbb, #2a9df4);
+  border: 5px solid rgba(10, 26, 43, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(59, 191, 187, 0.4);
+  flex-shrink: 0;
+}
+
+.profile-info {
+  flex: 1;
+  padding-bottom: 10px;
+}
+
+.profile-name {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.badge-danger { background-color: #ef4444; color: #fff; }
+.badge-primary { background-color: #3b82f6; color: #fff; }
+.badge-success { background-color: #10b981; color: #fff; }
+.badge-info { background-color: #0ea5e9; color: #fff; }
+
+/* ================= Details Grid ================= */
+.profile-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= Detail Cards ================= */
+.profile-detail-card {
+  background: rgba(10, 26, 43, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 191, 187, 0.2);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.profile-detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  border-color: rgba(59, 191, 187, 0.4);
+}
+
+.detail-card-header {
+  padding: 20px 25px;
+  background: rgba(59, 191, 187, 0.1);
+  border-bottom: 1px solid rgba(59, 191, 187, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.detail-icon {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #3bbfbb, #2a9df4);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.detail-card-body {
+  padding: 25px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(59, 191, 187, 0.1);
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.detail-value {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+.detail-monospace {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  background: rgba(59, 191, 187, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* ================= Status ================= */
+.status-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.status-active {
+  background: #10b981;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.4); opacity: 1; }
+}
+
+/* ================= Action Buttons ================= */
+.action-button {
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.action-button-primary {
+  background: linear-gradient(135deg, #3bbfbb, #2a9df4);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(59, 191, 187, 0.4);
+}
+
+.action-button-primary:hover {
+  background: linear-gradient(135deg, #6bc4e5, #3bbfbb);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 191, 187, 0.5);
+}
+
+.action-button-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(59, 191, 187, 0.3);
+}
+
+.action-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #3bbfbb;
+}
+/* Modal overlay */
+.profile-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* ensure it appears above everything */
+}
+
+/* Modal box */
+.profile-modal {
+  background-color: #1f1f1f; /* dark modal */
+  color: #fff;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  z-index: 1001;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal header */
+.profile-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.profile-modal-header h3 {
+  margin: 0;
+}
+
+.profile-modal-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Modal body */
+.profile-modal-body {
+  margin-bottom: 20px;
+}
+
+/* Modal footer */
+.profile-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Buttons */
+.profile-modal-footer .btn {
+  min-width: 80px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

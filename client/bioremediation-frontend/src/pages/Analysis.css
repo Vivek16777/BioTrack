@@ -1,0 +1,184 @@
+.analysis-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.analysis-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.analysis-subtitle {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.analysis-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form-input {
+  flex: 1 1 45%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
+}
+
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.summary-card {
+  background: #1f53e3;
+}
+
+.last-data-card {
+  background: #d0a310; /* light yellow */
+}
+
+.summary-details p {
+  margin: 0.3rem 0;
+  color:black;
+}
+
+.observation {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #333;
+}
+
+.charts-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.chart-card {
+  flex: 1 1 45%;
+  padding: 1rem;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ================= Animation Card ================= */
+.animation-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  text-align: center;
+  z-index: 1;
+  background-color: white;
+  height: 400px;
+}
+
+.microbe-gif {
+  width: 400px; /* default desktop size */
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  animation: floatMicrobe 3s ease-in-out infinite;
+  background-color: white;
+}
+
+.animation-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #16a34a;
+}
+
+/* Microbe float animation */
+@keyframes floatMicrobe {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ================= Mobile Adjustments ================= */
+@media (max-width: 768px) {
+  .microbe-gif {
+    width: 300px; /* smaller GIF on mobile */
+  }
+
+  .animation-text {
+    font-size: 1.2rem;
+  }
+
+  .analysis-title {
+    font-size: 1.5rem;
+  }
+
+  .analysis-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .microbe-gif {
+    width: 300px; /* even smaller on small phones */
+  }
+
+  .animation-text {
+    font-size: 1rem;
+  }
+}
+.charts-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* allows items to wrap to next line */
+}
+
+/* Chart card styling */
+.chart-card {
+  flex: 1 1 45%; /* grow/shrink with min 45% width */
+  min-width: 300px; /* optional: prevent too small on very narrow screens */
+}
+
+/* Mobile screens: stack charts vertically */
+@media (max-width: 768px) {
+  .charts-row {
+    flex-direction: column;
+    gap: 20px; /* spacing between stacked charts */
+  }
+
+  .chart-card {
+    flex: 1 1 100%;
+  }
+}
+

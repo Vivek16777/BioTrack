@@ -1,0 +1,68 @@
+.dashboard-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #4f46e5;
+  text-align: center;
+}
+
+.no-history {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.history-card {
+  background: linear-gradient(135deg, #f0f4ff, #dbeafe);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.history-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.history-card::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-20deg);
+  transition: all 0.5s ease;
+}
+
+.history-card:hover::after {
+  left: 100%;
+}
+
+.history-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #1e40af;
+}
+
+.history-card p {
+  margin: 0.2rem 0;
+  color: #1e3a8a;
+}
