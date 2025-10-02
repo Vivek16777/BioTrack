@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import path from "path";
+import { fileURLToPath } from "url";
 import connectDB from "./config/db.js";
 
 import authRoutes from "./routes/authRoutes.js";
@@ -26,12 +27,21 @@ app.use("/api/auth", authRoutes);
 app.use("/api/analysis", analysisRoutes);
 app.use("/api/research", researchRoutes);
 
+// Fix __dirname for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 // Serve React frontend (production)
-const __dirname = path.resolve(); // required with ES modules
-app.use(express.static(path.join(__dirname, "client/build")));
+const frontendPath = path.join(
+  __dirname,
+  "client",
+  "bioremediation-frontend",
+  "build"
+);
+app.use(express.static(frontendPath));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+  res.sendFile(path.join(frontendPath, "index.html"));
 });
 
 // Start server
