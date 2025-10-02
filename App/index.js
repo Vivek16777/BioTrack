@@ -40,7 +40,8 @@ const frontendPath = path.join(
 );
 app.use(express.static(frontendPath));
 
-app.get("*", (req, res) => {
+// Catch-all route for React (everything except /api/*)
+app.get(/^\/(?!api\/).*/, (req, res) => {
   res.sendFile(path.join(frontendPath, "index.html"));
 });
 
