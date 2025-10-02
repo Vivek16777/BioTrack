@@ -34,7 +34,7 @@ const __dirname = path.dirname(__filename);
 // Serve React frontend (production)
 const frontendPath = path.join(
   __dirname,
-  "../client/bioremediation-frontend/build"
+  "../client/bioremediation-frontend/public"
 );
 app.use(express.static(frontendPath));
 
