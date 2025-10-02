@@ -1,10 +1,13 @@
 {
-  "dependencies": {
-    "name": "biotrack-backend",
+  "name": "biotrack-backend",
   "version": "1.0.0",
-  "main":"index.js",
-
+  "main": "index.js",
   "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
@@ -18,9 +21,5 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
-  },
-  "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
   }
 }
