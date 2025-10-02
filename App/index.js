@@ -34,13 +34,10 @@ const __dirname = path.dirname(__filename);
 // Serve React frontend (production)
 const frontendPath = path.join(
   __dirname,
-  "client",
-  "bioremediation-frontend",
-  "build"
+  "../client/bioremediation-frontend/build"
 );
 app.use(express.static(frontendPath));
 
-// Catch-all route for React (everything except /api/*)
 app.get(/^\/(?!api\/).*/, (req, res) => {
   res.sendFile(path.join(frontendPath, "index.html"));
 });
